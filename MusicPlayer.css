@@ -1,0 +1,173 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: TitleFont;
+    src: url(Ubuntu-Regular.ttf);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: TitleFont;
+    background-color:#161b33;
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    padding: 2% 3% 2% 2%;
+    background-color: #474973;
+    margin: 75px auto 0 auto;
+    text-align: center;
+    box-shadow: inset 2px 2px 1px rgba(255, 255, 255, .6),
+        inset -2px -2px 1px rgba(0, 0, 0, .8);
+    border-radius: 5px;
+    width: 40%;
+    min-width: 250px;
+}
+
+#Email,
+#Emailcon,
+#psw,
+#psw2,
+#pswcon,
+#Nickname {
+    font-family: TitleFont; 
+    box-shadow: inset -2px -2px 1px rgba(255, 255, 255, .6),
+        inset 2px 2px 1px rgba(0, 0, 0, .8);
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    min-width: 200px;
+    min-height: 50px;
+    padding: 3%;
+    margin: 2%;
+    border: none;
+    background: #a69cac;
+    border-radius: 10px;
+}
+
+#Email:focus,
+#psw:focus,
+#psw2:focus,
+#pswcon:focus,
+#Emailcon:focus,
+#Nickname:focus {
+    background-color: #f1dac4;
+    outline: none;
+}
+
+.submit { 
+    border-radius: 10px;
+    font-family: TitleFont; 
+    background-color: #a69cac;
+    color: white;
+    font-size: 125%;
+    padding: 4%;
+    margin: 1% 1% 1% 2%;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    box-shadow: inset 2px 2px 1px rgba(255, 255, 255, .6),
+        inset -2px -2px 1px rgba(0, 0, 0, .8);
+}
+
+.submit:hover {
+    opacity: 100;
+}
+
+.submit:active {
+    transform: translateY(2px)
+}
+
+.btn {
+    text-align: center;
+}
+
+b {
+    font-size: 125%;
+}
+
+a:link {
+    color: #f1dac4;
+}
+
+a:visited {
+    color: #a69cac;
+}
+
+.inscription {
+    display: none;
+}
+
+.MusicHall {
+    display: none;
+    width: 100%;
+}
+
+.nav, .footer, .corps {
+    padding: 1%;
+}
+
+.nav {
+    float: left;
+    height: 80vh;
+    width: 20%;
+    min-width: 200px;
+    background-color: #001F2E;
+    overflow-y: auto;
+    box-shadow: 5px 0px 10px #00263C;
+}
+
+.liens {
+    display: flex;
+    flex-flow: column;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background: #001F2E;
+    height: 20vh;
+    width: 100%;
+    box-shadow: 0px -5px 10px #00263C;
+}
+
+.corps {
+    padding: 2%;
+    color: white;
+    width: 80%;
+    height: 80vh;
+    background-color: #000000;
+    overflow-y: auto;
+}
+
+.Search {
+    width: 100%;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0 0 0 5%;
+    margin: 2% 0 2% 0;
+}
+
+.nav a {
+    color: #007EA7;
+    margin: 2% 0 2% 10%;
+    font-size: 125%;
+}
+
+.nav a:hover {
+    color: #00bdfc;
+}
