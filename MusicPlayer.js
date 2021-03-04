@@ -62,6 +62,13 @@ $(document).ready(() => {
     var pseudo =$('#Nickname')
     var main = $('.MusicHall')[0]
 
+    if (!sessionStorage.getItem("session")) {
+        con.style.display = "block";
+    } else {
+        main.style.display = "block";
+        con.style.display = "none"
+    }
+
     $('.Login').click((event) => {
         event.preventDefault()
         if (ins.style.display === "none") {
@@ -131,6 +138,7 @@ $(document).ready(() => {
             if (ActualUser.email == Emailcon.val()) {
                 if (ActualUser.psw == pswcon.val()) {
                     ConExist = true
+                    sessionStorage.setItem("session", JSON.stringify(ActualUser))
                     break;
                 }
             }
