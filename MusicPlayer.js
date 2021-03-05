@@ -59,7 +59,7 @@ $(document).ready(() => {
     var pswcon = $('#pswcon')
     var psw = $('#psw')
     var psw2 = $('#psw2')
-    var pseudo =$('#Nickname')
+    var pseudo = $('#Nickname')
     var main = $('.MusicHall')[0]
 
     if (!sessionStorage.getItem("session")) {
@@ -129,6 +129,7 @@ $(document).ready(() => {
             return true
         }
     })
+    
     $('.formcon').submit((event) => {
         event.preventDefault()
         let ConExist = false
@@ -150,4 +151,12 @@ $(document).ready(() => {
             main.style.display = "block";
         }
     })
+    var myaudio = new Audio('mysong.mp3');
+
+    myaudio.play(); /*This will play the music.*/
+    myaudio.pause(); /*This will stop the music.*/
+    myaudio.duration; /*Returns the length of the music track.*/
+    myaudio.currentTime = 0; /*This will rewind the audio to the beginning.*/
+    myaudio.loop = true; /*This will make the audio track loop.*/
+    myaudio.muted = true; /*This will mute the track*/
 })

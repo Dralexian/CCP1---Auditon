@@ -4,7 +4,8 @@
     box-sizing: inherit;
 }
 
-html,body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -20,13 +21,13 @@ html {
 
 body {
     font-family: TitleFont;
-    background-color:#161b33;
+    background-color: #161b33;
     width: 100%;
     height: 100%;
 }
 
 form {
-    padding: 2% 3% 2% 2%;
+    padding: 2% 4% 2% 2%;
     background-color: #474973;
     margin: 75px auto 0 auto;
     text-align: center;
@@ -34,7 +35,7 @@ form {
         inset -2px -2px 1px rgba(0, 0, 0, .8);
     border-radius: 5px;
     width: 40%;
-    min-width: 250px;
+    min-width: 450px;
 }
 
 #Email,
@@ -43,7 +44,7 @@ form {
 #psw2,
 #pswcon,
 #Nickname {
-    font-family: TitleFont; 
+    font-family: TitleFont;
     box-shadow: inset -2px -2px 1px rgba(255, 255, 255, .6),
         inset 2px 2px 1px rgba(0, 0, 0, .8);
     display: flex;
@@ -58,6 +59,12 @@ form {
     border-radius: 10px;
 }
 
+#profilpic {
+    border-radius: 10px;
+    background-color: #a69cac;
+    margin: 2%;
+}
+
 #Email:focus,
 #psw:focus,
 #psw2:focus,
@@ -68,9 +75,9 @@ form {
     outline: none;
 }
 
-.submit { 
+.submit {
     border-radius: 10px;
-    font-family: TitleFont; 
+    font-family: TitleFont;
     background-color: #a69cac;
     color: white;
     font-size: 125%;
@@ -117,13 +124,20 @@ a:visited {
     width: 100%;
 }
 
-.nav, .footer, .corps {
+.nav,
+.footer,
+.corps {
     padding: 1%;
 }
 
+.top {
+    overflow: auto;
+    white-space: nowrap;
+}
+
 .nav {
+    display: inline-block;
     color: white;
-    float: left;
     height: 85vh;
     width: 20%;
     min-width: 200px;
@@ -147,12 +161,22 @@ a:visited {
 }
 
 .corps {
-    padding: 2%;
+    display: inline-block;
     color: white;
     width: 80%;
     height: 85vh;
     background-color: #001925;
     overflow-y: auto;
+}
+
+.corpsheader {
+    text-align: right;
+}
+
+#ImgPfl {
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .Search {
