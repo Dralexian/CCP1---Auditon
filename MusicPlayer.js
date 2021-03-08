@@ -61,8 +61,9 @@ $(document).ready(() => {
     var psw2 = $('#psw2')
     var pseudo = $('#Nickname')
     var main = $('.MusicHall')[0]
+    var profileimg = $('input[name="Avatar"]:checked')
 
-    if (!sessionStorage.getItem("session")) {
+    if (!sessionStorage.getItem("ActualUser")) {
         con.style.display = "block";
     } else {
         main.style.display = "block";
@@ -115,7 +116,7 @@ $(document).ready(() => {
                 id: create_UUID(),
                 pseudo: pseudo.val(),
                 email: Email.val(),
-                psw: psw.val()
+                psw: psw.val(),
             }
             Users.user.push(newuser)
             alert('Vous êtes inscrit, veuillez vous connecter')
@@ -139,7 +140,7 @@ $(document).ready(() => {
             if (ActualUser.email == Emailcon.val()) {
                 if (ActualUser.psw == pswcon.val()) {
                     ConExist = true
-                    sessionStorage.setItem("session", JSON.stringify(ActualUser))
+                    sessionStorage.setItem("ActualUser", JSON.stringify(ActualUser))
                     break;
                 }
             }
@@ -149,14 +150,27 @@ $(document).ready(() => {
         } else {
             con.style.display = "none";
             main.style.display = "block";
+            let ActualUser = JSON.parse(sessionStorage.getItem("ActualUser"))
+            $('#ImgPfl').attr("src", ActualUser.profilimg)
         }
     })
-    var myaudio = new Audio('mysong.mp3');
 
-    myaudio.play(); /*This will play the music.*/
-    myaudio.pause(); /*This will stop the music.*/
-    myaudio.duration; /*Returns the length of the music track.*/
-    myaudio.currentTime = 0; /*This will rewind the audio to the beginning.*/
-    myaudio.loop = true; /*This will make the audio track loop.*/
-    myaudio.muted = true; /*This will mute the track*/
+    $('#Deco').click((event) => {
+        event.preventDefault()
+        sessionStorage.removeItem('session')
+        main.style.display = "none";
+        con.style.display = "block"
+    })
+
+    $('input:radio[name="Avatar"]').change(function(){
+        if ($(this).val() == 'Avatar-1.png') {
+            $('#ImgPfl').attr('src', 'Avatar-1.png')
+        }
+        if ($(this).val() == 'Avatar-2.png') {
+            $('#ImgPfl').attr('src', 'Avatar-2.png')
+        }
+        if ($(this).val() == 'Avatar-3.png') {
+            $('#ImgPfl').attr('src', 'Avatar-3.png')
+        }
+    })
 })

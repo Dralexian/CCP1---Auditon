@@ -26,10 +26,20 @@
                 <label for="psw2"><b>Confirmez votre mot de passe :</b></label>
                 <input type="password" placeholder="Mot de passe" name="psw2" id="psw2">
 
-                <label for="profilpic"><b>Image de profile :</b></label>
+                <label for="profilpic"><b>Sélectionnez une image de profile :</b></label>
                 <br>
-                <input type="file" name="profilpic" id="profilpic" capture>
-                <!--https://www.codegrepper.com/code-examples/html/html+input+file+upload+image+for+profile+picture-->
+                <input type="radio" id="AvatarChoice1" name="Avatar" value="Avatar-1.png" class="Hiddenbox" checked>
+                <label for="AvatarChoice1">
+                    <img src="Avatar-1.png" alt="Avatar-1" class="Avatar">
+                </label>
+                <input type="radio" id="AvatarChoice2" name="Avatar" value="Avatar-2.png" class="Hiddenbox">
+                <label for="AvatarChoice2">
+                    <img src="Avatar-2.png" alt="Avatar-2" class="Avatar">
+                </label>
+                <input type="radio" id="AvatarChoice3" name="Avatar" value="Avatar-3.png" class="Hiddenbox">
+                <label for="AvatarChoice3">
+                    <img src="Avatar-3.png" alt="Avatar-3" class="Avatar">
+                </label>
                 <br>
                 <button type="submit" class="submit">Valider</button>
             </div>
@@ -71,45 +81,81 @@
             </div>
             <div class="corps">
                 <div class="corpsheader">
-                    <img src='Profile.jpg' alt="Image de profile" id='ImgPfl'>
-                    <b><span id="ID"></span></b>
+                    <div class="dropdown">
+                        <img src='' alt="Image de profile" id='ImgPfl'>
+                        <div class="dropdown-content">
+                            <a href='#'>Changer l'avatar</a>
+                            <a href='#' id="Deco">Déconnexion</a>
+                        </div>
+                    </div>
                 </div>
-                aze1<br><hr>
-                aze2<br><hr>
-                aze3<br><hr>
-                aze4<br><hr>
-                aze5<br><hr>
-                aze6<br><hr>
-                aze7<br><hr>
-                aze8<br><hr>
-                aze9<br><hr>
-                aze0<br><hr>
-                aze1<br><hr>
-                aze2<br><hr>
-                aze3<br><hr>
-                aze4<br><hr>
-                aze5<br><hr>
-                aze6<br><hr>
-                aze7<br><hr>
-                aze8<br><hr>
-                aze9<br><hr>
-                aze0<br><hr>
-                aze1<br><hr>
-                aze2<br><hr>
-                aze3<br><hr>
-                aze4<br><hr>
-                aze5<br><hr>
-                aze7<br><hr>
-                aze6<br><hr>
-                aze8<br><hr>
-                aze9<br><hr>
-                aze0<br><hr>
-                aze1<br><hr>
+                aze1<br>
+                <hr>
+                aze2<br>
+                <hr>
+                aze3<br>
+                <hr>
+                aze4<br>
+                <hr>
+                aze5<br>
+                <hr>
+                aze6<br>
+                <hr>
+                aze7<br>
+                <hr>
+                aze8<br>
+                <hr>
+                aze9<br>
+                <hr>
+                aze0<br>
+                <hr>
+                aze1<br>
+                <hr>
+                aze2<br>
+                <hr>
+                aze3<br>
+                <hr>
+                aze4<br>
+                <hr>
+                aze5<br>
+                <hr>
+                aze6<br>
+                <hr>
+                aze7<br>
+                <hr>
+                aze8<br>
+                <hr>
+                aze9<br>
+                <hr>
+                aze0<br>
+                <hr>
+                aze1<br>
+                <hr>
+                aze2<br>
+                <hr>
+                aze3<br>
+                <hr>
+                aze4<br>
+                <hr>
+                aze5<br>
+                <hr>
+                aze7<br>
+                <hr>
+                aze6<br>
+                <hr>
+                aze8<br>
+                <hr>
+                aze9<br>
+                <hr>
+                aze0<br>
+                <hr>
+                aze1<br>
+                <hr>
             </div>
         </div>
         <div class="footer">
             <div id="wrapper">
-                <div id='player'>
+                <!-- <div id='player'>
                     <audio id="music_player">
                         <source src="music/sample_music.mp3" />
                     </audio>
@@ -118,16 +164,16 @@
                     <img src="images/volume.png" id="vol_img">
                     <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
                 </div>
-            </div>
-            <!--http://talkerscode.com/webtricks/create-custom-audio-player-using-html5-and-javascript.php
+            </div>-->
+                <!--http://talkerscode.com/webtricks/create-custom-audio-player-using-html5-and-javascript.php
             <audio controls>
                 <source src="" type='audio/mpeg'>
                 Your browser does not support the audio element.
             </audio>
             <input type="range">-->
+            </div>
         </div>
-    </div>
-    <script src="MusicPlayer.js"></script>
+        <script src="MusicPlayer.js"></script>
 </body>
 
 </html>
