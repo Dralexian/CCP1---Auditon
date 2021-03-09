@@ -8,30 +8,6 @@ function ismdp(mdp) {
     return regex.test(mdp)
 }
 
-function IsEmailValid() {
-    let EmailExist = false
-    let x
-    for (x in Users.user) {
-        let ActualUser = Users.user[x]
-        if (ActualUser.email == Emailcon.val()) {
-            EmailExist = true
-            break;
-        }
-    }
-}
-
-function isMdpValid() {
-    let MdpExist = false
-    let y
-    for (y in Users.user) {
-        let ActualUser = Users.user[y]
-        if (ActualUser.psw == psw.val()) {
-            MdpExist = true
-            break;
-        }
-    }
-}
-
 function create_UUID() {
     var dt = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -61,13 +37,14 @@ $(document).ready(() => {
     var psw2 = $('#psw2')
     var pseudo = $('#Nickname')
     var main = $('.MusicHall')[0]
-    var profileimg = $('input[name="Avatar"]:checked')
 
     if (!sessionStorage.getItem("ActualUser")) {
         con.style.display = "block";
     } else {
+        let Utilisateur = JSON.parse(sessionStorage.getItem("ActualUser"))
         main.style.display = "block";
-        con.style.display = "none"
+        con.style.display = "none";
+        $('#ImgPfl').attr('src', Utilisateur.profileimg)
     }
 
     $('.Login').click((event) => {
@@ -112,11 +89,20 @@ $(document).ready(() => {
         } else if (EmailExist == true) {
             alert('Cet Email existe déjà')
         } else {
+            const rbs = document.querySelectorAll('input[name="Avatar"]');
+            let selectedValue;
+            for (const rb of rbs) {
+                if (rb.checked) {
+                    selectedValue = rb.value;
+                    break;
+                }
+            }
             var newuser = {
                 id: create_UUID(),
                 pseudo: pseudo.val(),
                 email: Email.val(),
                 psw: psw.val(),
+                profileimg: selectedValue,
             }
             Users.user.push(newuser)
             alert('Vous êtes inscrit, veuillez vous connecter')
@@ -130,7 +116,7 @@ $(document).ready(() => {
             return true
         }
     })
-    
+
     $('.formcon').submit((event) => {
         event.preventDefault()
         let ConExist = false
@@ -148,29 +134,22 @@ $(document).ready(() => {
         if (!ConExist) {
             alert("Email ou mot de passe incorrect")
         } else {
+            pswcon.val("")
+            Emailcon.val('')
             con.style.display = "none";
             main.style.display = "block";
-            let ActualUser = JSON.parse(sessionStorage.getItem("ActualUser"))
-            $('#ImgPfl').attr("src", ActualUser.profilimg)
+            let Utilisateur = JSON.parse(sessionStorage.getItem("ActualUser"))
+            $('#ImgPfl').attr('src', Utilisateur.profileimg)
         }
     })
 
     $('#Deco').click((event) => {
         event.preventDefault()
-        sessionStorage.removeItem('session')
+        sessionStorage.removeItem('ActualUser')
         main.style.display = "none";
         con.style.display = "block"
     })
 
-    $('input:radio[name="Avatar"]').change(function(){
-        if ($(this).val() == 'Avatar-1.png') {
-            $('#ImgPfl').attr('src', 'Avatar-1.png')
-        }
-        if ($(this).val() == 'Avatar-2.png') {
-            $('#ImgPfl').attr('src', 'Avatar-2.png')
-        }
-        if ($(this).val() == 'Avatar-3.png') {
-            $('#ImgPfl').attr('src', 'Avatar-3.png')
-        }
-    })
+    
+
 })
