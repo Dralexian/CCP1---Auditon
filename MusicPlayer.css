@@ -21,7 +21,7 @@ html {
 
 body {
     font-family: TitleFont;
-    background-color: #161b33;
+    background-color: #001925;
     width: 100%;
     height: 100%;
 }
@@ -78,7 +78,7 @@ form {
 .submit {
     border-radius: 10px;
     font-family: TitleFont;
-    background-color: #a69cac;
+    background-color: #0079fe;
     color: white;
     font-size: 125%;
     padding: 4%;
@@ -112,7 +112,7 @@ a:link {
 }
 
 a:visited {
-    color: #a69cac;
+    color: #0079fe;
 }
 
 .inscription {
@@ -167,6 +167,7 @@ a:visited {
     height: 85vh;
     background-color: #001925;
     overflow-y: auto;
+    text-overflow: ellipsis;
 }
 
 .corpsheader {
@@ -178,19 +179,19 @@ a:visited {
     left: -9999px;
 }
 
-input[type=radio]:checked + label>img {
+input[type=radio]:checked+label>img {
     border: 1px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 3px 3px #0079fe;
 }
 
-input[type=radio] + label>img {
+input[type=radio]+label>img {
     width: 150px;
     height: 150px;
     transition: 500ms all;
 }
 
-input[type=radio]:checked + label>img {
+input[type=radio]:checked+label>img {
     transform:
         rotateZ(-10deg) rotateX(10deg);
 }
@@ -240,46 +241,103 @@ input[type=radio]:checked + label>img {
     display: none;
 }
 
-/* Dropdown Button */
 .dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-      border: 1px solid white;
+}
+
+.dropdown-content {
+    border: 1px solid white;
     display: none;
     position: absolute;
     right: 0;
     background-color: #001925;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: #0079fe;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+table {
+    width: 100%;
+    padding: 1%;
+}
+
+th {
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+td {
+    padding: 1%;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.Nbr {
+    width: 5%;
+}
+
+.Artist {
+    overflow: hidden;
+    max-width: 10%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.Player {
+    margin: 1% auto 0 auto;
+    width: 70%;
+}
+
+.music {
+    cursor: pointer;
+}
+
+.Cover {
+    position: relative;
+    float: left;
+    width: 80px;
+}
+
+.col {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+}
+
+#labeling {
+    color: white;
+}
+
+.Select {
+    width: 100%;
+}

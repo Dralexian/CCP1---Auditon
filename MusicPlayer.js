@@ -150,6 +150,37 @@ $(document).ready(() => {
         con.style.display = "block"
     })
 
-    
+    var urlsong = "https://raw.githubusercontent.com/Dralexian/CCP1---Auditon/Test-1/jsonMusique.json"
 
+    $.get(urlsong, function (data) {
+        Song = JSON.parse(data);
+        var Songs = Song.songs;
+        for (x = 0; x < Songs.length; x++) {
+            let Songsv = Songs[x]
+            $('#librairy').children('tbody').append(`
+                <tr class="music" data-title="${Songsv.name}" data-cover="${Songsv.image}" data-song="${Songsv.song}" data-artist="${Songsv.artist}" id='${x}'>
+                    <td class="Nbr">${Songsv.id}</td>
+                    <td class="Title" >${Songsv.name}</td>
+                    <td class="Artist">${Songsv.artist}</td>
+                </tr>
+                `)
+        }
+        $('.Player').attr('src', Songs[0].song)
+        $('.Cover').attr('src', Songs[0].image)
+        $('#Label').text(Songs[0].name)
+        $('#Label2').text(Songs[0].artist)
+    })
+
+    var Musicname = $('.music').data("title")
+    var Musiccover = $('.music').data("cover")
+    var Musicsong = $('.music').data("song")
+    var Musicartist = $('.music').data("artist")
+
+    $('.music').click(() => {
+        console.log(this.data('title'))
+        $('.Player').attr('src', this.data('song'))
+        $('.Cover').attr('src', this.data('cover'))
+        $('#Label').text(this.data('title'))
+        $('#Label2').text(this.data('artist'))
+    })
 })
